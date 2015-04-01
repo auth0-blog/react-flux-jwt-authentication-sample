@@ -1,0 +1,54 @@
+{
+  "name": "react-browserify-spa-seed",
+  "version": "0.0.1",
+  "description": "Seed project for React, Browserify, Rework SPAs",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mgonto/react-browserify-spa-seed.git"
+  },
+  "authors": [
+    "Martin Gontovnikas <martin@gon.to> (http://gon.to/)"
+  ],
+  "browserify": {
+    "transform": [
+      "babelify",
+      "reactify"
+    ]
+  },
+  "scripts": {
+    "start": "npm run build-js && npm run build-css && serve .",
+    "watch": "npm run watch-js & npm run watch-css & serve .",
+    "test": "npm run lint -s && npm run build",
+    "build-css": "rework-npm index.css | cleancss -o build/build.css",
+    "build-js": "browserify --extension=.jsx --extension=.js src/app.jsx | uglifyjs > build/build.js",
+    "watch-js": "watchify --extension=.jsx --extension=.js src/app.jsx -o build/build.js --debug --verbose",
+    "watch-css": "nodemon -e css --ignore build/build.css --exec 'rework-npm index.css -o build/build.css'",
+    "lint-eslint": "eslint .",
+    "lint-jscs": "jscs .",
+    "lint": "npm run lint-eslint && npm run lint-jscs"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mgonto/react-browserify-spa-seed/issues"
+  },
+  "homepage": "https://github.com/mgonto/react-browserify-spa-seed",
+  "dependencies": {
+    "bootstrap": "^3.3.0",
+    "react": "^0.13",
+    "reactify": "^1.0.0"
+  },
+  "devDependencies": {
+    "babelify": "^5.0.4",
+    "browser-sync": "^2.1.6",
+    "browserify": "^8.0.3",
+    "eslint": "^0.14.1",
+    "reactify": "^1.0.0",
+    "rework": "^1.0.1",
+    "rework-npm": "^1.0.0",
+    "rework-npm-cli": "^0.1.1",
+    "serve": "^1.4.0",
+    "uglify-js": "^2.4.15",
+    "watchify": "^2.1.1"
+  }
+}
