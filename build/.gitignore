@@ -1,6 +1,1 @@
-# Ignore everything
-*
-
-# But not these files...
-!.gitignore
-!.donotdelete
+.build.js
