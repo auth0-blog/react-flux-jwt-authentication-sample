@@ -12,8 +12,7 @@
   ],
   "browserify": {
     "transform": [
-      "babelify",
-      "reactify"
+      "babelify"
     ]
   },
   "scripts": {
@@ -35,15 +34,19 @@
   "homepage": "https://github.com/mgonto/react-browserify-spa-seed",
   "dependencies": {
     "bootstrap": "^3.3.0",
+    "flux": "^2.0.1",
+    "jwt-decode": "^1.1.0",
     "react": "^0.13",
-    "reactify": "^1.0.0"
+    "react-mixin": "^1.1.0",
+    "react-router": "^0.13.2",
+    "reqwest": "^1.1.5",
+    "when": "^3.7.2"
   },
   "devDependencies": {
     "babelify": "^5.0.4",
     "browser-sync": "^2.1.6",
     "browserify": "^8.0.3",
     "eslint": "^0.14.1",
-    "reactify": "^1.0.0",
     "rework": "^1.0.1",
     "rework-npm": "^1.0.0",
     "rework-npm-cli": "^0.1.1",

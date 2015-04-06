@@ -1,15 +1,30 @@
-'use strict';
-
+import Router from 'react-router';
+var {Route} = Router;
+import AuthenticatedApp from './components/AuthenticatedApp'
+import Login from './components/Login';
+import Signup from './components/Signup';
+import Home from './components/Home';
 import React from 'react';
+import RouterContainer from './services/RouterContainer'
+import LoginActions from './actions/LoginActions'
 
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <h1>Hello world</h1>
-      </div>
-    );
-  }
-};
+var routes = (
+  <Route handler={AuthenticatedApp}>
+    <Route name="login" handler={Login}/>
+    <Route name="signup" handler={Signup}/>
+    <Route name="home" path="/" handler={Home}/>
+  </Route>
+);
 
-React.render(<App />, document.getElementById('content'));
+var router = Router.create({routes});
+RouterContainer.set(router);
+
+let jwt = localStorage.getItem('jwt');
+if (jwt) {
+  LoginActions.userLoggedIn(jwt);
+}
+
+router.run(function (Handler) {
+  React.render(<Handler />, document.getElementById('content'));
+});
+
