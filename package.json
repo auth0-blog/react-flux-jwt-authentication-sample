@@ -16,7 +16,8 @@
     ]
   },
   "scripts": {
-    "start": "npm run build-js && npm run build-css && serve .",
+    "start": "npm run build && serve .",
+    "build": "npm run build-js && npm run build-css",
     "watch": "npm run watch-js & npm run watch-css & serve .",
     "test": "npm run lint -s && npm run build",
     "build-css": "rework-npm index.css | cleancss -o build/build.css",
@@ -46,6 +47,7 @@
     "babelify": "^5.0.4",
     "browser-sync": "^2.1.6",
     "browserify": "^8.0.3",
+    "clean-css": "^3.1.9",
     "eslint": "^0.14.1",
     "rework": "^1.0.1",
     "rework-npm": "^1.0.0",
