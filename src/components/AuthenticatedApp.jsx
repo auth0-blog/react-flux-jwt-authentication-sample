@@ -18,9 +18,6 @@ export default class AuthenticatedApp extends React.Component {
 
   componentDidMount() {
     LoginStore.addChangeListener(this._onChange.bind(this));
-    if(this.state.message === '') {
-      HelloActions.fetch();
-    }
   }
 
   _onChange() {
