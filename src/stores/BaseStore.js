@@ -1,6 +1,16 @@
 import { EventEmitter } from 'events';
+import AppDispatcher from '../dispatchers/AppDispatcher';
 
 export default class BaseStore extends EventEmitter {
+
+  constructor(actionSubscribe) {
+    this._dispatchToken = AppDispatcher.register(actionSubscribe);
+  }
+
+  get dispatchToken() {
+    return this._dispatchToken;
+  }
+
   emitChange() {
     this.emit('CHANGE');
   }

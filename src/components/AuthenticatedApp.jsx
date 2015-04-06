@@ -7,10 +7,10 @@ import AuthService from '../services/AuthService'
 
 export default class AuthenticatedApp extends React.Component {
   constructor() {
-    this.state = this.getLoginState();
+    this.state = this._getLoginState();
   }
 
-  getLoginState() {
+  _getLoginState() {
     return {
       userLoggedIn: LoginStore.isLoggedIn()
     };
@@ -24,7 +24,7 @@ export default class AuthenticatedApp extends React.Component {
   }
 
   _onChange() {
-    this.setState(this.getLoginState());
+    this.setState(this._getLoginState());
   }
 
   componentWillUnmount() {

@@ -11,10 +11,10 @@ export default (ComposedComponent) => {
   }
 
   constructor() {
-    this.state = this.getLoginState();
+    this.state = this._getLoginState();
   }
 
-  getLoginState() {
+  _getLoginState() {
     return {
       userLoggedIn: LoginStore.isLoggedIn(),
       user: LoginStore.user
@@ -26,7 +26,7 @@ export default (ComposedComponent) => {
   }
 
   _onChange() {
-    this.setState(this.getLoginState());
+    this.setState(this._getLoginState());
   }
 
   componentWillUnmount() {
