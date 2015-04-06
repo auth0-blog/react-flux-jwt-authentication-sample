@@ -1,37 +1,39 @@
-# React Browserify SPA seed
+# Add authentication to a React Flux app
 
-A very opinionated seed for creating Single Page Apps that uses Browserify, React and Rework.
-
-## Why?
-
-You want to **create a new SPA but you don't want to depend on any framework** like AngularJS or Ember. You just want to roll your own thing. For that, you can start with this seed.
-
-## Used libraries
-
-### Build Libraries
-* Browserify
-* Rework
-* ESLint
-
-### App libraries
-* React
-* Page.js
-* Bootstrap
+This is a sample that shows how you can add authentication to a React Flux app.
 
 ## Using it
 
-Just run `npm install` to get all the dependencies and then use:
+Clone this repository as well as [the server](https://github.com/auth0/nodejs-jwt-authentication-sample) for this example.
 
-* **`npm run watch`**: Spins up a server on `localhost:3000` with Watch for CSS and JS files.
-* **`npm run start`**: Creates `build/` files and spins up a server on `localhost:3000`. No watch in this case!
+First, run the server app in the port `3001`.
 
-You can see the other tasks you can run in the [package.json scripts](https://github.com/mgonto/react-browserify-spa-seed/blob/master/package.json#L18-L29)
+Then, run `npm install` on this project and run `npm run watch` to start the app. Then just navigate to [http://localhost:3000](http://localhost:3000)
 
+## How does it work?
 
-## Feedback
+To learn more about how this project works and how it has been implemented, please read [this blog post](TODO://)
 
-Do you have any feedback about the app? Just let me know :)
+## Issue Reporting
+
+If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/whitehat) details the procedure for disclosing security issues.
 
 ## License
 
 MIT
+
+## What is Auth0?
+
+Auth0 helps you to:
+
+* Add authentication with [multiple authentication sources](https://docs.auth0.com/identityproviders), either social like **Google, Facebook, Microsoft Account, LinkedIn, GitHub, Twitter, Box, Salesforce, amont others**, or enterprise identity systems like **Windows Azure AD, Google Apps, Active Directory, ADFS or any SAML Identity Provider**.
+* Add authentication through more traditional **[username/password databases](https://docs.auth0.com/mysql-connection-tutorial)**.
+* Add support for **[linking different user accounts](https://docs.auth0.com/link-accounts)** with the same user.
+* Support for generating signed [Json Web Tokens](https://docs.auth0.com/jwt) to call your APIs and **flow the user identity** securely.
+* Analytics of how, when and where users are logging in.
+* Pull data from other sources and add it to the user profile, through [JavaScript rules](https://docs.auth0.com/rules).
+
+## Create a free account in Auth0
+
+1. Go to [Auth0](https://auth0.com) and click Sign Up.
+2. Use Google, GitHub or Microsoft Account to login.
