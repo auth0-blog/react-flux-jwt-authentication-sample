@@ -5,6 +5,7 @@ import RouterContainer from '../services/RouterContainer'
 export default {
   userLoggedIn: (jwt) => {
     RouterContainer.get().transitionTo('/');
+    localStorage.setItem('jwt', jwt);
     AppDispatcher.dispatch({
       actionType: USER_LOGGED_IN,
       jwt: jwt
@@ -12,6 +13,7 @@ export default {
   },
   userLoggedOut: () => {
     RouterContainer.get().transitionTo('/login');
+    localStorage.removeItem('jwt', jwt);
     AppDispatcher.dispatch({
       actionType: USER_LOGGED_OUT
     });

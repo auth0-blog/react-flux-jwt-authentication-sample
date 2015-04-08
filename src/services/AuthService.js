@@ -18,7 +18,6 @@ class AuthService {
   }
 
   logout() {
-    localStorage.removeItem('jwt');
     LoginActions.userLoggedOut();
   }
 
@@ -38,7 +37,6 @@ class AuthService {
     return loginPromise
       .then(function(response) {
         var jwt = response.id_token;
-        localStorage.setItem('jwt', jwt);
         LoginActions.userLoggedIn(jwt);
         return true;
       });

@@ -8,13 +8,14 @@ class LoginStore extends BaseStore {
   constructor() {
     super(this._registerToActions.bind(this));
     this._user = null;
+    this._jwt = null;
   }
 
   _registerToActions(action) {
     switch(action.actionType) {
       case USER_LOGGED_IN:
-        let jwt = action.jwt;
-        this._user = jwt_decode(jwt);
+        this._jwt = action.jwt;
+        this._user = jwt_decode(this._jwt);
         this.emitChange();
         break;
       case USER_LOGGED_OUT:
@@ -28,6 +29,10 @@ class LoginStore extends BaseStore {
 
   get user() {
     return this._user;
+  }
+
+  get jwt() {
+    return this._jwt;
   }
 
   isLoggedIn() {
