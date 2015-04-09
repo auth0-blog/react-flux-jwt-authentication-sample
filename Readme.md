@@ -12,7 +12,7 @@ Then, run `npm install` on this project and run `npm run watch` to start the app
 
 ## How does it work?
 
-To learn more about how this project works and how it has been implemented, please read [this blog post](TODO://)
+To learn more about how this project works and how it has been implemented, please read [this blog post](https://auth0.com/blog/2015/04/09/adding-authentication-to-your-react-flux-app/)
 
 ## Issue Reporting
 
