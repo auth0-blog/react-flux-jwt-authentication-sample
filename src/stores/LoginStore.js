@@ -1,4 +1,4 @@
-import {USER_LOGGED_IN, USER_LOGGED_OUT} from '../constants/LoginConstants';
+import {LOGIN_USER, LOGOUT_USER} from '../constants/LoginConstants';
 import BaseStore from './BaseStore';
 import jwt_decode from 'jwt-decode';
 
@@ -13,12 +13,12 @@ class LoginStore extends BaseStore {
 
   _registerToActions(action) {
     switch(action.actionType) {
-      case USER_LOGGED_IN:
+      case LOGIN_USER:
         this._jwt = action.jwt;
         this._user = jwt_decode(this._jwt);
         this.emitChange();
         break;
-      case USER_LOGGED_OUT:
+      case LOGOUT_USER:
         this._user = null;
         this.emitChange();
         break;

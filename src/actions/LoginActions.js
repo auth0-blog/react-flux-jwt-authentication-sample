@@ -1,21 +1,21 @@
 import AppDispatcher from '../dispatchers/AppDispatcher.js';
-import {USER_LOGGED_IN, USER_LOGGED_OUT} from '../constants/LoginConstants.js';
+import {LOGIN_USER, LOGOUT_USER} from '../constants/LoginConstants.js';
 import RouterContainer from '../services/RouterContainer'
 
 export default {
-  userLoggedIn: (jwt) => {
+  loginUser: (jwt) => {
     RouterContainer.get().transitionTo('/');
     localStorage.setItem('jwt', jwt);
     AppDispatcher.dispatch({
-      actionType: USER_LOGGED_IN,
+      actionType: LOGIN_USER,
       jwt: jwt
     });
   },
-  userLoggedOut: () => {
+  logoutUser: () => {
     RouterContainer.get().transitionTo('/login');
-    localStorage.removeItem('jwt', jwt);
+    localStorage.removeItem('jwt');
     AppDispatcher.dispatch({
-      actionType: USER_LOGGED_OUT
+      actionType: LOGOUT_USER
     });
   }
 }

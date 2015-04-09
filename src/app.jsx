@@ -21,7 +21,7 @@ RouterContainer.set(router);
 
 let jwt = localStorage.getItem('jwt');
 if (jwt) {
-  LoginActions.userLoggedIn(jwt);
+  LoginActions.loginUser(jwt);
 }
 
 router.run(function (Handler) {

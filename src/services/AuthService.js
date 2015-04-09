@@ -18,7 +18,7 @@ class AuthService {
   }
 
   logout() {
-    LoginActions.userLoggedOut();
+    LoginActions.logoutUser();
   }
 
   signup(username, password, extra) {
@@ -37,7 +37,7 @@ class AuthService {
     return loginPromise
       .then(function(response) {
         var jwt = response.id_token;
-        LoginActions.userLoggedIn(jwt);
+        LoginActions.loginUser(jwt);
         return true;
       });
   }
