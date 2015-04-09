@@ -1,6 +1,6 @@
 # Add authentication to a React Flux app
 
-This is a sample that shows how you can add authentication to a React Flux app.
+This is a sample that shows how you can add authentication to a React Flux app. Read more about it in [this blog post](https://auth0.com/blog/2015/04/09/adding-authentication-to-your-react-flux-app/)
 
 ## Using it
 
