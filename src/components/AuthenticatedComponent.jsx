@@ -23,7 +23,8 @@ export default (ComposedComponent) => {
     }
 
     componentDidMount() {
-      LoginStore.addChangeListener(this._onChange.bind(this));
+      this.changeListener = this._onChange.bind(this);
+      LoginStore.addChangeListener(this.changeListener);
     }
 
     _onChange() {
@@ -31,7 +32,7 @@ export default (ComposedComponent) => {
     }
 
     componentWillUnmount() {
-      LoginStore.removeChangeListener(this._onChange.bind(this));
+      LoginStore.removeChangeListener(this.changeListener);
     }
 
     render() {

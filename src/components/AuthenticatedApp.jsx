@@ -17,7 +17,8 @@ export default class AuthenticatedApp extends React.Component {
   }
 
   componentDidMount() {
-    LoginStore.addChangeListener(this._onChange.bind(this));
+    this.changeListener = this._onChange.bind(this);
+    LoginStore.addChangeListener(this.changeListener);
   }
 
   _onChange() {
@@ -25,7 +26,7 @@ export default class AuthenticatedApp extends React.Component {
   }
 
   componentWillUnmount() {
-    LoginStore.removeChangeListener(this._onChange.bind(this));
+    LoginStore.removeChangeListener(this.changeListener);
   }
 
   render() {
