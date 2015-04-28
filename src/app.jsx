@@ -1,12 +1,11 @@
-import Router from 'react-router';
-var {Route} = Router;
+import React from 'react';
+import Router, {Route} from 'react-router';
 import AuthenticatedApp from './components/AuthenticatedApp'
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Home from './components/Home';
-import React from 'react';
-import RouterContainer from './services/RouterContainer'
-import LoginActions from './actions/LoginActions'
+import RouterContainer from './services/RouterContainer';
+import LoginActions from './actions/LoginActions';
 
 var routes = (
   <Route handler={AuthenticatedApp}>
