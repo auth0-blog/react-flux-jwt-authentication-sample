@@ -11,6 +11,7 @@ export default (ComposedComponent) => {
     }
 
     constructor() {
+      super()
       this.state = this._getLoginState();
     }
 

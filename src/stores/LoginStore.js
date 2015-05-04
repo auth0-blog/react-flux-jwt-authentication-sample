@@ -6,7 +6,7 @@ import jwt_decode from 'jwt-decode';
 class LoginStore extends BaseStore {
 
   constructor() {
-    super(this._registerToActions.bind(this));
+    super(() => this._registerToActions.bind(this));
     this._user = null;
     this._jwt = null;
   }
@@ -41,5 +41,3 @@ class LoginStore extends BaseStore {
 }
 
 export default new LoginStore();
-
-
