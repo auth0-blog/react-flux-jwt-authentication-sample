@@ -4,7 +4,8 @@ import AppDispatcher from '../dispatchers/AppDispatcher';
 export default class BaseStore extends EventEmitter {
 
   constructor(actionSubscribe) {
-    this._dispatchToken = AppDispatcher.register(actionSubscribe);
+    super()
+    this._dispatchToken = AppDispatcher.register(actionSubscribe());
   }
 
   get dispatchToken() {

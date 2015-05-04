@@ -5,6 +5,7 @@ import Auth from '../services/AuthService'
 export default class Signup extends React.Component {
 
   constructor() {
+    super()
     this.state = {
       user: '',
       password: '',

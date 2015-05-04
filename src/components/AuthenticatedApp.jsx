@@ -7,6 +7,7 @@ import AuthService from '../services/AuthService'
 
 export default class AuthenticatedApp extends React.Component {
   constructor() {
+    super()
     this.state = this._getLoginState();
   }
 
