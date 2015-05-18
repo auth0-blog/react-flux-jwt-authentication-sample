@@ -44,7 +44,7 @@
     "when": "^3.7.2"
   },
   "devDependencies": {
-    "babelify": "^6.0.2",
+    "babelify": "^6.1.0",
     "browser-sync": "^2.1.6",
     "browserify": "^8.0.3",
     "clean-css": "^3.1.9",
