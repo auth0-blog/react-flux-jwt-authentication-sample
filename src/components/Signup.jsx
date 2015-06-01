@@ -46,4 +46,4 @@ export default class Signup extends React.Component {
   }
 }
 
-reactMixin(Signup.prototype, React.addons.LinkedStateMixin);
+ReactMixin(Signup.prototype, React.addons.LinkedStateMixin);
